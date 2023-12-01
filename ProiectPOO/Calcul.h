@@ -1,57 +1,21 @@
 #pragma once
+#include <iostream>
+#include "Calcul.h"
 
 class Calcul
 {
 private:
-
-	bool readyForAction=false;
-	static int nrCalcule;
-	char* expresie = nullptr; //pusesem string...sa revin char*
+    static int nrCalcule;
+    bool readyForAction = false;
+    char* expresie;
 
 public:
+    Calcul();
+    Calcul(const char* expresie);
+    ~Calcul();
 
-
-	Calcul()//constructor implicit
-	{
-		nrCalcule++;
-		//expresie = "Epresiee";
-	}
-
-	Calcul(char* expresie)
-	{
-
-		this->expresie = expresie;
-	}
-
-	~Calcul()//destructor
-	{
-		if (expresie != nullptr)
-			delete[] expresie;
-
-		cout << "apel destructor";//proba
-	}
-
-	void gasesteParantezele()
-	{
-		for (int i = 0; i < strlen(expresie); i++)
-		{
-			if (expresie[i] == '(')
-				int beginP = i;
-			if (expresie[i] == ')')
-				int endP = i;
-		}
-	}
-
-	void setExpresie()
-	{
-		cin >> expresie;
-
-	}
-
-	string getExpresie()
-	{
-		return  expresie;
-	}
+    void gasesteParantezele();
+    void setExpresie();
+    const char* getExpresie();
+    static int getNrCalcule();
 };
-
-int nrCalcule = 0;
