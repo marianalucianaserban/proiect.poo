@@ -4,12 +4,20 @@ using namespace std;
 
 class Calcul
 {
-public:
+	private:
 	string expresie;
 
-	Calcul()
-	{
+    public:
 
+	~Calcul()//destructor
+    {
+		cout << "apel destructor";
+	}
+
+
+	Calcul()//constructor implicit
+	{
+		expresie = "Epresiee";
 	}
 
 	void gasesteParantezele()
@@ -22,11 +30,16 @@ public:
 				int endP = i;
 	    }
 	}
+
+	string getExpresie()
+	{
+		return expresie;
+	}
 };
 int main()
 {
 	Calcul c;
 	cout << endl << "Introduceti expresia: ";
-	cin >> c.expresie;
-	cout << endl << c.expresie;
+	//cin >> c.getExpresie();
+	cout << endl << c.getExpresie() << endl;
 } 
