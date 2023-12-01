@@ -31,9 +31,15 @@ class Calcul
 	    }
 	}
 
+	void setExpresie()
+	{
+		cin >> expresie;
+
+	}
+
 	string getExpresie()
 	{
-		return expresie;
+		return  expresie;
 	}
 };
 int main()
