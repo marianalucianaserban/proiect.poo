@@ -23,7 +23,6 @@ public:
 
 	Calcul(char* expresie)
 	{
-
 		this->expresie = expresie;
 	}
 
@@ -59,3 +58,4 @@ public:
 };
 
 int nrCalcule = 0;
+
