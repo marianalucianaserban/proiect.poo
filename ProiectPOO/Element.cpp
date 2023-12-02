@@ -9,6 +9,7 @@ public:
     Element() : elemente(nullptr)
     {
     }
+
     Element(const char* date) : elemente(nullptr)
     {
         setElemente(date);

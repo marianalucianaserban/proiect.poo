@@ -4,8 +4,9 @@ using namespace std;
 class Calculator {
 
 private:
-    char* expresii; 
-
+    bool readyForAction = false;
+    static int nrCalcule;
+    char* expresii = nullptr;
 public:
     Calculator()
     {
@@ -17,11 +18,23 @@ public:
     }
     ~Calculator()
     {
+        delete[] expresii;
 
     }
     Calculator(const Calculator& calcul)
     {
 
+    }
+
+    void gasesteParantezele()
+    {
+        for (int i = 0; i < strlen(expresii); i++)
+        {
+            if (expresii[i] == '(')
+                int beginP = i;
+            if (expresii[i] == ')')
+                int endP = i;
+        }
     }
     Calculator& operator=(const Calculator& calcul)
     {
@@ -51,3 +64,5 @@ public:
     friend ostream& operator<<(ostream& out, const Calculator& calculator);
     friend istream& operator>>(istream& in, Calculator& calculator);
 };
+
+int nrCalcule = 0;
