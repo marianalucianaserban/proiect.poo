@@ -1,45 +1,18 @@
 #pragma once
-#include <iostream>
+#include "Element.h"
 
-using namespace std;
-
-class Expresie
-{   
+class Expresie {
 private:
-	double* valori;
-	char* deProcesat = nullptr;//?
+    double* valori;
+    Element** tokeni;
+    int nrTokeni;
 
 public:
-	Expresie()
-	{
-	}
+    Expresie();
+    ~Expresie();
 
-	~Expresie()
-	{
-	}
-	void eOperatie()
-	{
-	}
-
-	void eNumar()
-	{
-
-	}
-
-	double folosesteOperator(double a, double b, char Operator) 
-	{
-		switch (Operator) {
-		case '+':
-			return a + b;
-		case '-':
-			return a - b;
-		case '*':
-			return a * b;
-		case '/':
-			return a / b;
-		default:
-			throw exception("!!!Operator invalid!!!");
-		}
-	}
-
+    void eOperatie(const char* element);
+    void eNumar(const char* element);
+    double folosesteOperator(double a, double b, char Operator);
 };
+//de facut get si set

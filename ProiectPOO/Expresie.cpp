@@ -1,23 +1,14 @@
 #pragma once
 #include <iostream>
-#include "Element.h"
-
-using namespace std;
-
-class Expresie
-{
-private:
-	double* valori;
-	Element** tokeni;
-	int nrTokeni;
+#include "Expresie.h"
 
 
-public:
-	Expresie() : valori(nullptr), tokeni(nullptr), nrTokeni(0)
+
+	Expresie::Expresie() : valori(nullptr), tokeni(nullptr), nrTokeni(0)
 	{
 	}
 
-	~Expresie()
+	Expresie::~Expresie()
 	{
 		delete[] valori;
 
@@ -51,11 +42,11 @@ public:
 				return a / b;
 			}
 			else {
-				throw exception("!!IMPARTIRE LA 0!!");
+				throw std::exception("!!IMPARTIRE LA 0!!");
 			}
 		default:
-			throw exception("!!!Operator invalid!!!");
+			throw std::exception("!!!Operator invalid!!!");
 		}
 	}
 
-};
+
