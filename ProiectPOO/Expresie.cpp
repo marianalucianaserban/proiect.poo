@@ -3,7 +3,6 @@
 #include "Expresie.h"
 
 
-
 	Expresie::Expresie() : valori(nullptr), tokeni(nullptr), nrTokeni(0)
 	{
 	}
