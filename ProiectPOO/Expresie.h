@@ -3,17 +3,18 @@
 
 using namespace std;
 
-class Procesare
+class Expresie
 {   
 private:
-	char* deProcesat = nullptr;
+	double* valori;
+	char* deProcesat = nullptr;//?
 
 public:
-	Procesare()
+	Expresie()
 	{
 	}
 
-	~Procesare()
+	~Expresie()
 	{
 	}
 	void eOperatie()

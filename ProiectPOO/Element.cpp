@@ -12,7 +12,10 @@ public:
 
     Element(const char* date) : elemente(nullptr)
     {
-        setElemente(date);
+        if (date != nullptr)
+        {
+            setElemente(date);
+        }
     }
 
     ~Element()
@@ -30,6 +33,6 @@ public:
     {
         delete[] elemente;
         elemente = new char[strlen(date) + 1];
-        strcpy(elemente, date);
+        strcpy_s(elemente, strlen(date) + 1, date);
     }
 };
