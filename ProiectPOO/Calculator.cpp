@@ -4,17 +4,16 @@ using namespace std;
 class Calculator {
 
 private:
-    bool readyForAction = false;
+    bool readyForAction;
     static int nrCalcule;
-    char* expresii = nullptr;
+    char* expresii;
 public:
-    Calculator()
+    Calculator() : readyForAction(false), expresii(nullptr)
     {
-
     }
-    Calculator(const char* expresii)
+    Calculator(const char* expresii) : readyForAction(false), expresii(nullptr)
     {
-
+        setExpresii(expresii);
     }
     ~Calculator()
     {
@@ -38,31 +37,62 @@ public:
     }
     Calculator& operator=(const Calculator& calcul)
     {
-
+        if (this != &calcul) {
+            readyForAction = calcul.readyForAction;
+            setExpresii(calcul.expresii);
+        }
+        return *this;
     }
 
     const char* getExpresii()
     {
+        return expresii;
     }
 
     void setExpresii(const char* expresii)
     {
+        delete[] this->expresii;
+        this->expresii = new char[strlen(expresii) + 1];
+        strcpy_s(this->expresii, strlen(expresii) + 1 ,expresii);
     }
-    void FACEM_METODEGENERICE();
+    
+    double folosesteOperator(double a, double b, char Operator)
+    {
+        switch (Operator) {
+        case '+':
+            return a + b;
+        case '-':
+            return a - b;
+        case '*':
+            return a * b;
+        case '/':
+            return a / b;
+        default:
+            throw exception("!!!Operator invalid!!!");
+        }
+    } 
     void ALTA_METODA();
 
 
     bool operator==(const Calculator& calcul)
     {
-        return this->expresii == calcul.expresii;
+        return (strcmp(this->expresii, calcul.expresii) == 0);
     }
 
     char operator[](int index)
     {
+        if (expresii && index >= 0 && index < static_cast<int>(strlen(expresii)))
+        {
+            return expresii[index];
+        }
+        else
+            throw exception("Indexul nu e bun!");
+            //tratam cazul in care indexul nu  e bun
+
     }
 
     friend ostream& operator<<(ostream& out, const Calculator& calculator);
     friend istream& operator>>(istream& in, Calculator& calculator);
 };
 
-int nrCalcule = 0;
+int Calculator::nrCalcule = 0;

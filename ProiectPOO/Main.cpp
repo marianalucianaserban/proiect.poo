@@ -1,15 +1,15 @@
 #include <iostream>
-#include "Calcul.h"
-#include "Procesare.h"
-#include "Rezultat.h"
+#include "Calculator.h"
+#include "Element.h"
+#include "Expresie.h"
 using namespace std;
 
 
 
 int main()
 {
-	Calcul c;
+	Calculator c;
 	cout << endl << "Introduceti expresia: ";
 	//cin >> c.getExpresie();
-	cout << endl << c.getExpresie() << endl;
+	cout << endl;
 } 
