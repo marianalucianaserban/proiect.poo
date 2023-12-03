@@ -8,7 +8,7 @@ using namespace std;
 
 int main()
 {
-	Calculator c;
+	Calculator calculator;
 	cout << endl << "Introduceti expresia: ";
 	//cin >> c.getExpresie();
 	cout << endl;

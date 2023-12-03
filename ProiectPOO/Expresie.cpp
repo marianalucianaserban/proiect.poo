@@ -5,6 +5,7 @@
 
 	Expresie::Expresie() : valori(nullptr), tokeni(nullptr), nrTokeni(0)
 	{
+
 	}
 
 	Expresie::~Expresie()
