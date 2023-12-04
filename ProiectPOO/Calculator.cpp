@@ -1,13 +1,16 @@
 #include "Calculator.h"
+#include "Expresie.h"
 #include <string>
+using namespace std;
+
 
 int Calculator::nrCalcule = 0;
 
-Calculator::Calculator() : readyForAction(false), expresii(nullptr)
+Calculator::Calculator() : readyForAction(true), expresii(nullptr)
 {
 }
 
-Calculator::Calculator(const char* expresii) : readyForAction(false), expresii(nullptr)
+Calculator::Calculator(const char* expresii) : readyForAction(true), expresii(nullptr)
 {
     setExpresii(expresii);
 }
@@ -46,9 +49,26 @@ void Calculator::setExpresii(const char* expresii)
     strcpy_s(this->expresii, strlen(expresii) + 1, expresii);
 }
 
-void Calculator::ALTA_METODA()
+void Calculator::ruleaza()
 {
+    Expresie test;
+    while (this->readyForAction)
+    {
+        std::cout << std::endl << "Introduceti expresia: ";
+        std::string input;
+        std::getline(std::cin, input);
+        if (input == "exit" || input == "")
+        {
+            this->readyForAction = false;
+            break;
+        }
+        cout << test.stergeSpatii(input);
+
+    }
 }
+
+
+
 
 bool Calculator::operator==(const Calculator& calcul)
 {

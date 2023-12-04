@@ -21,7 +21,7 @@ public:
 
     const char* getExpresii();
     void setExpresii(const char* expresii);
-    void ALTA_METODA();
+    void ruleaza();
 
     friend std::ostream& operator<<(std::ostream& out, const Calculator& calculator);
     friend std::istream& operator>>(std::istream& in, Calculator& calculator);

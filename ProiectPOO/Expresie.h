@@ -1,18 +1,21 @@
 #pragma once
 #include "Element.h"
 
+using namespace std;
+
 class Expresie {
 private:
-    double* valori;
-    Element** tokeni;
-    int nrTokeni;
+    string expresie;
+
+
+
 
 public:
     Expresie();
-    ~Expresie();
 
-    void eOperatie(const char* element);
-    void eNumar(const char* element);
-    double folosesteOperator(double a, double b, char Operator);
+    string stergeSpatii(std::string expresie);
+    void separaNumere(std::string expr);
+
+
+
 };
-//de facut get si set
