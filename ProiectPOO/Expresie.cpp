@@ -50,6 +50,17 @@ void Expresie::separaNumere(std::string expr)
 	}
 }
 
+void gasesteParantezele(std::string expresie)
+{
+	for (int i = 0; i < 10; i++)
+	{
+		if (expresie[i] == '(')
+			int beginP = i;
+		if (expresie[i] == ')')
+			int endP = i;
+	}
+}
+
 double folosesteOperator(double a, double b, char Operator)
 {
 	switch (Operator) {
